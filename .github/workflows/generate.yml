@@ -1,0 +1,58 @@
+name: Generate DotSlash
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version of Zig to generate DotSlash for'
+        required: true
+        default: 'master'
+        type: string
+  schedule:
+    - cron: "0 12 * * *"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # to commit generated files
+
+    steps:
+
+    - name: Pick version (workflow_dispatch)
+      if: github.event_name == 'workflow_dispatch'
+      run: |
+        echo "ZIG_VERSION=${{ github.event.inputs.version }}" >> "$GITHUB_ENV"
+    - name: Pick version (schedule)
+      if: github.event_name == 'schedule'
+      run: |
+        echo "ZIG_VERSION=master" >> "$GITHUB_ENV"
+
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.head_ref }}
+
+    - uses: facebook/install-dotslash@latest
+
+    - name: Determine DotSlash cache
+      id: cache
+      run: |
+        echo "value=$(dotslash -- cache-dir)" >> "$GITHUB_OUTPUT"
+
+    # Cache downloaded tols between runs.
+    - uses: actions/cache@v4
+      with:
+        path: ${{ steps.cache.outputs.value }}
+        key: ${{ runner.os }}-dotslash-${{ hashFiles('tools/**') }}
+
+    - name: Generate DotSlash
+      run: |
+        ./tools/zig build -Doptimize=ReleaseSafe run -- -C versions "$ZIG_VERSION"
+
+    - uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        file_pattern: 'versions/*'
+        commit_message: "versions: Add ${{ env.ZIG_VERSION }}"
+        commit_author: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
+

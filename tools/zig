@@ -1,0 +1,78 @@
+#!/usr/bin/env dotslash
+{
+  "name": "zig",
+  "platforms": {
+    "linux-aarch64": {
+      "size": 43090688,
+      "hash": "blake3",
+      "digest": "892bcb1754ace93dc96d46d2fb2241d6eceb74ef6675ddd3b88462da71fafd59",
+      "format": "tar.xz",
+      "path": "zig-linux-aarch64-0.13.0/zig",
+      "providers": [
+        {
+          "url": "https://ziglang.org/download/0.13.0/zig-linux-aarch64-0.13.0.tar.xz"
+        }
+      ]
+    },
+    "linux-x86_64": {
+      "size": 47082308,
+      "hash": "blake3",
+      "digest": "990ebc38b84f30250a04dd4cfdad05394ce571d102aaa0cae52ca23b370ac76f",
+      "format": "tar.xz",
+      "path": "zig-linux-x86_64-0.13.0/zig",
+      "providers": [
+        {
+          "url": "https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz"
+        }
+      ]
+    },
+    "macos-x86_64": {
+      "size": 48857012,
+      "hash": "blake3",
+      "digest": "f2e1ad093ca340656284ac17efc0cb390f614dfc24cfde3876ea780d58c25ca1",
+      "format": "tar.xz",
+      "path": "zig-macos-x86_64-0.13.0/zig",
+      "providers": [
+        {
+          "url": "https://ziglang.org/download/0.13.0/zig-macos-x86_64-0.13.0.tar.xz"
+        }
+      ]
+    },
+    "macos-aarch64": {
+      "size": 44892040,
+      "hash": "blake3",
+      "digest": "b9b7d39d0c93f18bebb48d6e947ef1264d6369de88055419bb99b9f3a306c453",
+      "format": "tar.xz",
+      "path": "zig-macos-aarch64-0.13.0/zig",
+      "providers": [
+        {
+          "url": "https://ziglang.org/download/0.13.0/zig-macos-aarch64-0.13.0.tar.xz"
+        }
+      ]
+    },
+    "windows-x86_64": {
+      "size": 79163968,
+      "hash": "blake3",
+      "digest": "41c9fcf920e78e6911988d37928ce78cdf55f912e96697e59f587a5a2e2881ad",
+      "format": "zip",
+      "path": "zig-windows-x86_64-0.13.0/zig.exe",
+      "providers": [
+        {
+          "url": "https://ziglang.org/download/0.13.0/zig-windows-x86_64-0.13.0.zip"
+        }
+      ]
+    },
+    "windows-aarch64": {
+      "size": 75119033,
+      "hash": "blake3",
+      "digest": "dcee79279b983d5b1fd081cf5bf8a690989631f2ffa74dbe2ed5ae6078b1b22a",
+      "format": "zip",
+      "path": "zig-windows-aarch64-0.13.0/zig.exe",
+      "providers": [
+        {
+          "url": "https://ziglang.org/download/0.13.0/zig-windows-aarch64-0.13.0.zip"
+        }
+      ]
+    }
+  }
+}
