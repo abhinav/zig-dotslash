@@ -1,0 +1,78 @@
+#!/usr/bin/env dotslash
+{
+  "name": "zig",
+  "platforms": {
+    "linux-aarch64": {
+      "size": 43652704,
+      "hash": "blake3",
+      "digest": "aceeeee14e00ba1ca32345b03efe761b4ade077bace0c11b12ba173b07b12168",
+      "format": "tar.xz",
+      "path": "zig-linux-aarch64-0.14.0-dev.1391+e084c46ed/zig",
+      "providers": [
+        {
+          "url": "https://ziglang.org/builds/zig-linux-aarch64-0.14.0-dev.1391+e084c46ed.tar.xz"
+        }
+      ]
+    },
+    "linux-x86_64": {
+      "size": 47696152,
+      "hash": "blake3",
+      "digest": "ca8f7d7940c34446c07e004f577a1fbc50784ed38633ab63f5382a7bcd3264ac",
+      "format": "tar.xz",
+      "path": "zig-linux-x86_64-0.14.0-dev.1391+e084c46ed/zig",
+      "providers": [
+        {
+          "url": "https://ziglang.org/builds/zig-linux-x86_64-0.14.0-dev.1391+e084c46ed.tar.xz"
+        }
+      ]
+    },
+    "macos-x86_64": {
+      "size": 49481132,
+      "hash": "blake3",
+      "digest": "22a3bed0a99f402ad052ac48be3104738688b19a20c67ff12d6554de7da64c9b",
+      "format": "tar.xz",
+      "path": "zig-macos-x86_64-0.14.0-dev.1391+e084c46ed/zig",
+      "providers": [
+        {
+          "url": "https://ziglang.org/builds/zig-macos-x86_64-0.14.0-dev.1391+e084c46ed.tar.xz"
+        }
+      ]
+    },
+    "macos-aarch64": {
+      "size": 45433904,
+      "hash": "blake3",
+      "digest": "2170a46f7d13120219056e86822f8c3acc97c7ed33dc18f875c689e8676548fe",
+      "format": "tar.xz",
+      "path": "zig-macos-aarch64-0.14.0-dev.1391+e084c46ed/zig",
+      "providers": [
+        {
+          "url": "https://ziglang.org/builds/zig-macos-aarch64-0.14.0-dev.1391+e084c46ed.tar.xz"
+        }
+      ]
+    },
+    "windows-x86_64": {
+      "size": 80778470,
+      "hash": "blake3",
+      "digest": "629464267c5a460477513e556c17419c6ad22e461b46b6de443ade134225573a",
+      "format": "zip",
+      "path": "zig-windows-x86_64-0.14.0-dev.1391+e084c46ed/zig.exe",
+      "providers": [
+        {
+          "url": "https://ziglang.org/builds/zig-windows-x86_64-0.14.0-dev.1391+e084c46ed.zip"
+        }
+      ]
+    },
+    "windows-aarch64": {
+      "size": 76661554,
+      "hash": "blake3",
+      "digest": "00194cda29b9a984e2067ea3c1b25e9c073659d5b56ded87b3e8cf98091fe2bc",
+      "format": "zip",
+      "path": "zig-windows-aarch64-0.14.0-dev.1391+e084c46ed/zig.exe",
+      "providers": [
+        {
+          "url": "https://ziglang.org/builds/zig-windows-aarch64-0.14.0-dev.1391+e084c46ed.zip"
+        }
+      ]
+    }
+  }
+}
