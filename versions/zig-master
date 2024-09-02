@@ -3,74 +3,74 @@
   "name": "zig",
   "platforms": {
     "linux-aarch64": {
-      "size": 43652704,
+      "size": 43665316,
       "hash": "blake3",
-      "digest": "aceeeee14e00ba1ca32345b03efe761b4ade077bace0c11b12ba173b07b12168",
+      "digest": "c50dcbc368c402871a70a5906a60b4f12916574a96b993e80268d29e0d167e4e",
       "format": "tar.xz",
-      "path": "zig-linux-aarch64-0.14.0-dev.1391+e084c46ed/zig",
+      "path": "zig-linux-aarch64-0.14.0-dev.1409+6d2945f1f/zig",
       "providers": [
         {
-          "url": "https://ziglang.org/builds/zig-linux-aarch64-0.14.0-dev.1391+e084c46ed.tar.xz"
+          "url": "https://ziglang.org/builds/zig-linux-aarch64-0.14.0-dev.1409+6d2945f1f.tar.xz"
         }
       ]
     },
     "linux-x86_64": {
-      "size": 47696152,
+      "size": 47712812,
       "hash": "blake3",
-      "digest": "ca8f7d7940c34446c07e004f577a1fbc50784ed38633ab63f5382a7bcd3264ac",
+      "digest": "776d31e0b7a3c7836194ca0de8cd9a4d338c8ad67df81d7975efcbd5fe087590",
       "format": "tar.xz",
-      "path": "zig-linux-x86_64-0.14.0-dev.1391+e084c46ed/zig",
+      "path": "zig-linux-x86_64-0.14.0-dev.1409+6d2945f1f/zig",
       "providers": [
         {
-          "url": "https://ziglang.org/builds/zig-linux-x86_64-0.14.0-dev.1391+e084c46ed.tar.xz"
+          "url": "https://ziglang.org/builds/zig-linux-x86_64-0.14.0-dev.1409+6d2945f1f.tar.xz"
         }
       ]
     },
     "macos-x86_64": {
-      "size": 49481132,
+      "size": 49503828,
       "hash": "blake3",
-      "digest": "22a3bed0a99f402ad052ac48be3104738688b19a20c67ff12d6554de7da64c9b",
+      "digest": "1e61c99a272a37af3af80db64b1b059f9a222004885799386313798179cc147f",
       "format": "tar.xz",
-      "path": "zig-macos-x86_64-0.14.0-dev.1391+e084c46ed/zig",
+      "path": "zig-macos-x86_64-0.14.0-dev.1409+6d2945f1f/zig",
       "providers": [
         {
-          "url": "https://ziglang.org/builds/zig-macos-x86_64-0.14.0-dev.1391+e084c46ed.tar.xz"
+          "url": "https://ziglang.org/builds/zig-macos-x86_64-0.14.0-dev.1409+6d2945f1f.tar.xz"
         }
       ]
     },
     "macos-aarch64": {
-      "size": 45433904,
+      "size": 45421612,
       "hash": "blake3",
-      "digest": "2170a46f7d13120219056e86822f8c3acc97c7ed33dc18f875c689e8676548fe",
+      "digest": "b0aeb0906559b8df93f877f9ccb40aecfe58629b5fd50aac84e76d2110cefa01",
       "format": "tar.xz",
-      "path": "zig-macos-aarch64-0.14.0-dev.1391+e084c46ed/zig",
+      "path": "zig-macos-aarch64-0.14.0-dev.1409+6d2945f1f/zig",
       "providers": [
         {
-          "url": "https://ziglang.org/builds/zig-macos-aarch64-0.14.0-dev.1391+e084c46ed.tar.xz"
+          "url": "https://ziglang.org/builds/zig-macos-aarch64-0.14.0-dev.1409+6d2945f1f.tar.xz"
         }
       ]
     },
     "windows-x86_64": {
-      "size": 80778470,
+      "size": 80782807,
       "hash": "blake3",
-      "digest": "629464267c5a460477513e556c17419c6ad22e461b46b6de443ade134225573a",
+      "digest": "67924164bf00ee1115e28762254b5e861b3908d7d0cc83f8cb42e4865af6ba4e",
       "format": "zip",
-      "path": "zig-windows-x86_64-0.14.0-dev.1391+e084c46ed/zig.exe",
+      "path": "zig-windows-x86_64-0.14.0-dev.1409+6d2945f1f/zig.exe",
       "providers": [
         {
-          "url": "https://ziglang.org/builds/zig-windows-x86_64-0.14.0-dev.1391+e084c46ed.zip"
+          "url": "https://ziglang.org/builds/zig-windows-x86_64-0.14.0-dev.1409+6d2945f1f.zip"
         }
       ]
     },
     "windows-aarch64": {
-      "size": 76661554,
+      "size": 76665582,
       "hash": "blake3",
-      "digest": "00194cda29b9a984e2067ea3c1b25e9c073659d5b56ded87b3e8cf98091fe2bc",
+      "digest": "d1a76d632aa019bb33966c9043b5da036336bb113e210e3c8ff3a28e2db1dbb7",
       "format": "zip",
-      "path": "zig-windows-aarch64-0.14.0-dev.1391+e084c46ed/zig.exe",
+      "path": "zig-windows-aarch64-0.14.0-dev.1409+6d2945f1f/zig.exe",
       "providers": [
         {
-          "url": "https://ziglang.org/builds/zig-windows-aarch64-0.14.0-dev.1391+e084c46ed.zip"
+          "url": "https://ziglang.org/builds/zig-windows-aarch64-0.14.0-dev.1409+6d2945f1f.zip"
         }
       ]
     }
