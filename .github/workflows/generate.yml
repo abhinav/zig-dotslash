@@ -48,11 +48,11 @@ jobs:
 
     - name: Generate DotSlash
       run: |
-        ./tools/zig build -Doptimize=ReleaseSafe run -- -C versions "$ZIG_VERSION"
+        ./tools/zig build -Doptimize=ReleaseSafe run -- -o "versions/zig-$ZIG_VERSION" "$ZIG_VERSION"
 
     - uses: stefanzweifel/git-auto-commit-action@v5
       with:
         file_pattern: 'versions/*'
-        commit_message: "versions: Add ${{ env.ZIG_VERSION }}"
+        commit_message: "versions: zig ${{ env.ZIG_VERSION }}"
         commit_author: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
 

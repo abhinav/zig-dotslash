@@ -22,8 +22,9 @@ to pin the version of Zig used by a project.
 ### Use an existing file
 
 1. Install DotSlash
-2. Grab a file for your preferred version from the versions/ folder.
-3. Run it like it's the Zig compielr.
+2. Grab a file for your preferred version from the versions/ folder
+   and place it in your project directory.
+3. Run it like it's the Zig compiler.
 
 ### Generating DotSlash files
 
