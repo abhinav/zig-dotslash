@@ -10,6 +10,9 @@
       "path": "zig-linux-aarch64-0.13.0/zig",
       "providers": [
         {
+          "url": "https://pkg.machengine.org/zig/zig-linux-aarch64-0.13.0.tar.xz"
+        },
+        {
           "url": "https://ziglang.org/download/0.13.0/zig-linux-aarch64-0.13.0.tar.xz"
         }
       ]
@@ -21,6 +24,9 @@
       "format": "tar.xz",
       "path": "zig-linux-x86_64-0.13.0/zig",
       "providers": [
+        {
+          "url": "https://pkg.machengine.org/zig/zig-linux-x86_64-0.13.0.tar.xz"
+        },
         {
           "url": "https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz"
         }
@@ -34,6 +40,9 @@
       "path": "zig-macos-x86_64-0.13.0/zig",
       "providers": [
         {
+          "url": "https://pkg.machengine.org/zig/zig-macos-x86_64-0.13.0.tar.xz"
+        },
+        {
           "url": "https://ziglang.org/download/0.13.0/zig-macos-x86_64-0.13.0.tar.xz"
         }
       ]
@@ -45,6 +54,9 @@
       "format": "tar.xz",
       "path": "zig-macos-aarch64-0.13.0/zig",
       "providers": [
+        {
+          "url": "https://pkg.machengine.org/zig/zig-macos-aarch64-0.13.0.tar.xz"
+        },
         {
           "url": "https://ziglang.org/download/0.13.0/zig-macos-aarch64-0.13.0.tar.xz"
         }
@@ -58,6 +70,9 @@
       "path": "zig-windows-x86_64-0.13.0/zig.exe",
       "providers": [
         {
+          "url": "https://pkg.machengine.org/zig/zig-windows-x86_64-0.13.0.zip"
+        },
+        {
           "url": "https://ziglang.org/download/0.13.0/zig-windows-x86_64-0.13.0.zip"
         }
       ]
@@ -69,6 +84,9 @@
       "format": "zip",
       "path": "zig-windows-aarch64-0.13.0/zig.exe",
       "providers": [
+        {
+          "url": "https://pkg.machengine.org/zig/zig-windows-aarch64-0.13.0.zip"
+        },
         {
           "url": "https://ziglang.org/download/0.13.0/zig-windows-aarch64-0.13.0.zip"
         }

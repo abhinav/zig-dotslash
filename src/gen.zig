@@ -291,29 +291,32 @@ fn createUrlEntry(
     version: []const u8,
     is_master: bool,
 ) !std.json.Value {
-    var url = std.ArrayList(u8).init(allocator);
-    defer url.deinit();
+    var buffer = std.ArrayList(u8).init(allocator);
+    defer buffer.deinit();
 
-    const url_w = url.writer();
-    if (is_master) {
-        try url_w.print(
-            "https://ziglang.org/builds/zig-{s}-{s}-{s}.",
-            .{ @tagName(os), @tagName(arch), version },
-        );
-    } else {
-        try url_w.print(
-            "https://ziglang.org/download/{s}/zig-{s}-{s}-{s}.",
-            .{ version, @tagName(os), @tagName(arch), version },
-        );
+    {
+        const url_w = buffer.writer();
+        if (is_master) {
+            try url_w.print(
+                "https://ziglang.org/builds/zig-{s}-{s}-{s}.",
+                .{ @tagName(os), @tagName(arch), version },
+            );
+        } else {
+            try url_w.print(
+                "https://ziglang.org/download/{s}/zig-{s}-{s}-{s}.",
+                .{ version, @tagName(os), @tagName(arch), version },
+            );
+        }
+        if (os == Os.windows) {
+            try url_w.writeAll("zip");
+        } else {
+            try url_w.writeAll("tar.xz");
+        }
     }
-    if (os == Os.windows) {
-        try url_w.writeAll("zip");
-    } else {
-        try url_w.writeAll("tar.xz");
-    }
+    const zig_url = try buffer.toOwnedSlice();
 
     var child = std.process.Child.init(&.{
-        "dotslash", "--", "create-url-entry", url.items,
+        "dotslash", "--", "create-url-entry", zig_url,
     }, allocator);
     child.stdout_behavior = .Pipe;
     child.stderr_behavior = .Inherit;
@@ -330,19 +333,50 @@ fn createUrlEntry(
         .{},
     );
 
-    var path = std.ArrayList(u8).init(allocator);
+    buffer.clearRetainingCapacity();
     {
-        const path_w = path.writer();
-        try path_w.print("zig-{s}-{s}-{s}/zig", .{ @tagName(os), @tagName(arch), version });
+        const path_w = buffer.writer();
+        try path_w.print(
+            "zig-{s}-{s}-{s}/zig",
+            .{ @tagName(os), @tagName(arch), version },
+        );
         if (os == Os.windows) {
             try path_w.writeAll(".exe");
         }
     }
+    const path = try buffer.toOwnedSlice();
 
-    try switch (value) {
-        .object => |*obj| obj.put("path", .{ .string = path.items }),
-        else => error.BadJSONOutput,
-    };
+    // Add mirrors as providers.
+    //   https://pkg.machengine.org/zig/zig-{os}-{arch}-{version}.{tar.xz,zip}
+    var machMirror = std.json.ObjectMap.init(allocator);
+    buffer.clearRetainingCapacity();
+    {
+        const url_w = buffer.writer();
+        try url_w.print(
+            "https://pkg.machengine.org/zig/zig-{s}-{s}-{s}.",
+            .{ @tagName(os), @tagName(arch), version },
+        );
+        if (os == Os.windows) {
+            try url_w.writeAll("zip");
+        } else {
+            try url_w.writeAll("tar.xz");
+        }
+    }
+    const mach_url = try buffer.toOwnedSlice();
+    try machMirror.put("url", .{ .string = mach_url });
+
+    switch (value) {
+        .object => |*obj| {
+            try obj.put("path", .{ .string = path });
+
+            if (obj.getPtr("providers")) |providers| {
+                try providers.array.insert(0, .{ .object = machMirror });
+            }
+        },
+        else => {
+            return error.BadJSONOutput;
+        },
+    }
 
     return value;
 }
